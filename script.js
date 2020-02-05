@@ -31,4 +31,6 @@ document.addEventListener("click", async function (e) {
             modal.style.display = "none"
             })
       }
+
+exit.addEventListener
     })
