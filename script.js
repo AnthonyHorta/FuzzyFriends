@@ -27,8 +27,8 @@ document.addEventListener("click", async function (e) {
       const dogId = element.id
       modal.style.display = "block"
       modal.innerHTML = `<img src=${dogId} /> <button class="exit">Exit</button>`
-        // modal.addEventListener("click", function () {
-        //     modal.style.display = "none"
-        //     })
+        modal.addEventListener("click", function () {
+            modal.style.display = "none"
+            })
       }
     })
