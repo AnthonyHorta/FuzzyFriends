@@ -2,7 +2,7 @@ const button = document.querySelector("#search")
 const breedInput = document.querySelector("#dogFinder")
 const imageDiv = document.querySelector("#searchResults")
 const modal =document.querySelector("#modal")
-const exit = document.querySelector(".exit")
+const exit = document.querySelector("#exit")
 
 button.addEventListener('click', async function (){
 // const apitest = await axios.get(`https://dog.ceo/api/breed/hound/images`)
@@ -26,7 +26,7 @@ document.addEventListener("click", async function (e) {
     if (element.className === "doggyCrate") {
       const dogId = element.id
       modal.style.display = "block"
-      modal.innerHTML = `<img src=${dogId} /> <button class="exit">Exit</button>`
+      modal.innerHTML = `<img src=${dogId} />`
         modal.addEventListener("click", function () {
             modal.style.display = "none"
             })
