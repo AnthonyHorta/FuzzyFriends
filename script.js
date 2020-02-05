@@ -2,6 +2,8 @@ const button = document.querySelector("#search")
 const breedInput = document.querySelector("#dogFinder")
 const imageDiv = document.querySelector("#searchResults")
 const modal =document.querySelector("#modal")
+const modalContent =document.querySelector("#modalContent")
+const modalImg = document.querySelector("#modalImg")
 const exit = document.querySelector("#exit")
 
 button.addEventListener('click', async function (){
@@ -25,10 +27,26 @@ document.addEventListener("click", async function (e) {
     const element = e.target.parentElement
     if (element.className === "doggyCrate") {
       const dogId = element.id
+      let button = `<div class="${dogId}" id="save"> <button id="saveMe">Save</button> </div>`
       modal.style.display = "block"
-      modal.innerHTML = `<img src=${dogId} />`
-        modal.addEventListener("click", function () {
+      modalContent.innerHTML = `<img src=${dogId} />`
+      modalClick.innerHTML = `${button}`
+        modalContent.addEventListener("click", function () {
             modal.style.display = "none"
             })
       }
     })
+
+document.addEventListener("click", async function (i) {
+    const elementSave = i.target.parentElement
+    if (elementSave.id === "save") {
+      modalClick.innerHTML = `<p id="saveConfirmation"> You Saved Me! <3 </p>`
+      const dogIdSave = elementSave.className
+      localSaveImg = `<img src=${dogIdSave} />`
+      localStorage.setItem(`saved`,`localSaveImg`);
+      }
+    })
+
+exit.addEventListener("click", function(){
+   modal.style.display = "none"
+})
