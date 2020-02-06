@@ -198,6 +198,7 @@ table {
         font-size: 16px;
         line-height: 20px;
         font-weight: 500;
+        text-transform: lowercase;
       }
       
       #search {
@@ -232,6 +233,11 @@ table {
         border-radius: 20px;
         left: 0;
         right:0;
+      }
+      #modalContent{
+        cursor: pointer;
+        max-width: 80%;
+        max-height: 58%;
       }
   }
 
