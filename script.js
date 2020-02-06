@@ -11,7 +11,7 @@ button.addEventListener('click', async function (){
 // console.log (apitest)
 searchResults.innerHTML = ""
 
-const breed = breedInput.value
+const breed = breedInput.value.toLowerCase()
 const response = await axios.get(`https://dog.ceo/api/breed/${breed}/images/random/300`)
 console.log(response)
 
