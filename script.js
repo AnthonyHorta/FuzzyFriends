@@ -43,7 +43,8 @@ document.addEventListener("click", async function (i) {
       modalClick.innerHTML = `<p id="saveConfirmation"> You Saved Me! <3 </p>`
       const dogIdSave = elementSave.className
       localSaveImg = `<img src=${dogIdSave} />`
-      localStorage.setItem(`saved`,`localSaveImg`);
+      localStorage.clear
+      localStorage.setItem(`saved`,localSaveImg);
       }
     })
 
