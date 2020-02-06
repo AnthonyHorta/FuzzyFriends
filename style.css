@@ -216,6 +216,22 @@ table {
         width: 80%;
         margin: 0 auto;
       }
+
+      #modal {
+        display: none;
+        max-width: 80%;
+        max-height: 65%;
+        background-color: white;
+        border: 1px solid black;
+        position: fixed;
+        top: 120px;
+        margin: 0 auto;
+        z-index: 2;
+        padding: 15px;
+        border-radius: 20px;
+        left: 0;
+        right:0;
+      }
   }
 
 
