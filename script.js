@@ -51,3 +51,22 @@ document.addEventListener("click", async function (i) {
 exit.addEventListener("click", function(){
    modal.style.display = "none"
 })
+
+
+// Return To The TOP
+
+let returnToTop =  document.querySelector(`#return-to-top`)
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    returnToTop.style.display = "block";
+  } else {
+    returnToTop.style.display = "none";
+  }
+}
+returnToTop.addEventListener(`click`, function() {
+  document.body.scrollTo({top: 0, behavior: 'smooth'});
+  document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+})
