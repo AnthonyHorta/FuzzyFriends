@@ -5,13 +5,22 @@ const modal =document.querySelector("#modal")
 const modalContent =document.querySelector("#modalContent")
 const modalImg = document.querySelector("#modalImg")
 const exit = document.querySelector("#exit")
+const savedFavBtn = document.querySelector("#savedFavBtn")
+const favoritesPage = window.location.pathname.includes("favs")
+
+if (favoritesPage){
+// savedFavBtn.addEventListener('click', async function (){
+  console.log(localStorage.getItem("saved"))
+   const savedDog = localStorage.getItem("saved")
+    imageDiv.innerHTML +=`<div> ${savedDog} </div>`
+}
 
 button.addEventListener('click', async function (){
 // const apitest = await axios.get(`https://dog.ceo/api/breed/hound/images`)
 // console.log (apitest)
 searchResults.innerHTML = ""
 
-const breed = breedInput.value.toLowerCase()
+const breed = breedInput.value
 const response = await axios.get(`https://dog.ceo/api/breed/${breed}/images/random/300`)
 console.log(response)
 
@@ -43,8 +52,7 @@ document.addEventListener("click", async function (i) {
       modalClick.innerHTML = `<p id="saveConfirmation"> You Saved Me! <3 </p>`
       const dogIdSave = elementSave.className
       localSaveImg = `<img src=${dogIdSave} />`
-      localStorage.clear
-      localStorage.setItem(`saved`,localSaveImg);
+      localStorage.setItem(`saved`,`${localSaveImg}`);
       }
     })
 
